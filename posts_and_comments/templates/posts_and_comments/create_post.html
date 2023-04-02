@@ -1,0 +1,9 @@
+{% extends 'authentication/base.html' %}
+{% block title%}Create a post{% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <form method="post" action = "{% url 'post:create_post' %}">
+        {% csrf_token %}{{form|crispy}}
+        <button type = "submit" class="btn btn-success">Post</button>
+    </form>
+{% endblock content %}
